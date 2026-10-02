@@ -2,7 +2,7 @@
 
 The dataset is the experimental vertical gas–liquid entrainment dataset from **Aliyu et al. (2017)** (1,367 measurements). It is third-party data and is not redistributed in this repository.
 
-Place the CSV here as `entraineddropletfraction_VerticalFlow.csv`, or point to it with the `EDF_DATA_PATH` environment variable.
+
 
 | Column | Meaning |
 |---|---|
