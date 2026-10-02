@@ -1,0 +1,13 @@
+scheme,model,pooled_r2,pooled_rmse,fold_r2_mean,fold_r2_std,fold_rmse_mean,fold_rmse_std
+Random 5-fold,Linear Regression,0.2685,0.247,0.266,0.0771,0.2467,0.0138
+Random 5-fold,Random Forest,0.9403,0.0706,0.9399,0.0051,0.0706,0.0014
+Random 5-fold,Gradient Boosting,0.918,0.0827,0.9179,0.0028,0.0826,0.0038
+Random 5-fold,"ANN (32-16, tanh)",0.8954,0.0934,0.8954,0.008,0.0933,0.0058
+Group 5-fold (by D),Linear Regression,-1158.6933,9.836,-1200.4083,2683.4562,4.6645,9.76
+Group 5-fold (by D),Random Forest,-0.1542,0.3103,-0.4308,0.6833,0.302,0.0822
+Group 5-fold (by D),Gradient Boosting,-0.4534,0.3482,-0.7407,1.0855,0.3327,0.1182
+Group 5-fold (by D),"ANN (32-16, tanh)",-0.2327,0.3207,-0.3805,1.1171,0.2954,0.1428
+Leave-one-diameter-out (25 folds),Linear Regression,-31.6334,1.65,-525.2383,2250.7195,0.8026,2.4942
+Leave-one-diameter-out (25 folds),Random Forest,0.0258,0.2851,-48.6948,127.1421,0.2514,0.1558
+Leave-one-diameter-out (25 folds),Gradient Boosting,-0.2937,0.3285,-50.334,123.6583,0.2751,0.1795
+Leave-one-diameter-out (25 folds),"ANN (32-16, tanh)",0.1511,0.2661,-36.3858,108.9028,0.2223,0.1635

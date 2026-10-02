@@ -69,9 +69,41 @@ TabNet's attention masks give a complementary view, ranking liquid density highe
 
 Overall, both nonlinear models give a broadly consistent variable hierarchy, which increases confidence that the ANN is learning physical structure rather than noise.
 
-### Classical ML reference
-[results/classic_ml/classic_ml_cv_results.csv](results/classic_ml/classic_ml_cv_results.csv) holds cross-validated tree/kernel/linear baselines from the EDA notebook on raw and dimensionless (Re, We) features. For transparency: **Random Forest (R² 0.94) and Gradient Boosting (R² 0.92) score higher than the ANN on this dataset**. The capstone's focus is a compact, interpretable neural approach rather than beating every tabular baseline; dimensionless features did *not* help (best R² 0.76).
+### Model comparison
+All models use the same 5-fold random split on raw features.
 
+![Model comparison](figures/model_comparison.png)
+
+| Model | R² | RMSE |
+|---|---|---|
+| Linear regression | 0.27 | 0.27 |
+| TabNet | 0.75 | 0.14 |
+| Gradient Boosting | 0.92 | 0.08 |
+| ANN (8-32-16-1, 833 params) | 0.90 | 0.09 |
+| Random Forest | 0.94 | 0.07 |
+
+For transparency: **Random Forest and Gradient Boosting score higher than the ANN on this dataset** under random K-fold. The ANN's case is size (833 parameters), smooth differentiable predictions, and SHAP interpretability, not raw accuracy. Source: [results/classic_ml/classic_ml_cv_results.csv](results/classic_ml/classic_ml_cv_results.csv).
+
+### Does it generalize to unseen pipe diameters?
+Random K-fold can place near-duplicate experimental conditions (same rig, same diameter) in both train and test. To check, `src/grouped_cv.py` holds out whole pipe diameters (GroupKFold by D, and leave-one-diameter-out over all 25 diameters).
+
+![Grouped CV](figures/grouped_cv_comparison.png)
+
+| Pooled out-of-fold | Random 5-fold R² / RMSE | Leave-one-diameter-out R² / RMSE |
+|---|---|---|
+| Linear regression | 0.27 / 0.25 | -31.6 / 1.65 |
+| Random Forest | 0.94 / 0.07 | 0.03 / 0.29 |
+| Gradient Boosting | 0.92 / 0.08 | -0.29 / 0.33 |
+| ANN | 0.90 / 0.09 | 0.15 / 0.27 |
+
+**Finding:** performance collapses when a diameter is held out entirely. Every model is near or below a predict-the-mean baseline (R² ≈ 0). The ANN is the least bad in leave-one-diameter-out, but no model should be trusted outside the diameters it was trained on. The headline R² of ~0.90 therefore describes interpolation within the tested diameters, not cross-geometry prediction. Per-diameter results are in [results/grouped_cv_by_diameter.csv](results/grouped_cv_by_diameter.csv); some diameters have very few points (as few as 4), so per-fold R² is unstable and pooled metrics are the fairer summary.
+
+## Additional things we tried
+
+- **Dimensionless features (Re, We):** no improvement; best R² 0.76 versus 0.90+ on raw features.
+- **Other baselines (Ridge, decision tree, SVM):** none competitive; the polynomial-kernel SVM failed outright. See the classic ML CSV.
+- **Single-split TabNet script:** an earlier TabNet variant on one train/test split is kept in `archive/` for history; the reported TabNet numbers use 5-fold CV.
+- **Diameter-grouped validation:** described above; the most informative negative result in the project.
 ## Repository structure
 
 ```
@@ -79,6 +111,7 @@ Overall, both nonlinear models give a broadly consistent variable hierarchy, whi
 ├── src/
 │   ├── config.py         shared features/target/seed/data path
 │   ├── ann_cv.py         ANN 5-fold CV + SHAP, runnable as a script
+│   ├── grouped_cv.py     random vs. leave-one-diameter-out CV (Linear/RF/GB/ANN)
 │   ├── tabnet_cv.py      TabNet 5-fold CV, saved models and feature importances
 │   └── make_comparison_figure.py
 ├── results/              CV metrics, model comparison, saved TabNet artifacts
@@ -95,6 +128,7 @@ pip install -r requirements.txt
 # put the dataset in data/ (see data/README.md), then:
 python src/ann_cv.py            # ANN CV + SHAP figures  (--skip-shap to skip SHAP)
 python src/tabnet_cv.py         # TabNet CV + final model, writes to results/tabnet/
+python src/grouped_cv.py         # grouped CV, ~15 min on CPU
 python src/make_comparison_figure.py
 ```
 
@@ -105,8 +139,8 @@ Notes:
 ## Limitations and future work
 
 - Small dataset (1,367 points) limited to vertical flow within the experimental ranges of Aliyu et al.; no extrapolation claims.
-- Cross-diameter generalization (e.g. leave-one-diameter-out) has not been tested.
-- Next steps: dimensionless-number feature engineering, uncertainty quantification, other flow regimes (slug/churn), benchmarking against classical entrainment correlations, and hybrid physics–ML models.
+- Cross-diameter generalization is poor (see above); the model is an interpolator within the tested diameters. Physics-informed inputs or more diameters are needed to fix this.
+- Next steps: uncertainty quantification, other flow regimes (slug/churn), benchmarking against classical entrainment correlations, and hybrid physics–ML models.
 
 ## References
 

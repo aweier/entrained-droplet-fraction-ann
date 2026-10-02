@@ -1,0 +1,101 @@
+model,D,n,rmse
+Linear Regression,0.005,207,0.1922
+Linear Regression,0.0094,14,0.2694
+Linear Regression,0.0094,77,0.1655
+Linear Regression,0.0095,30,0.2615
+Linear Regression,0.01,95,0.3908
+Linear Regression,0.0102,24,12.2262
+Linear Regression,0.0103,15,0.2745
+Linear Regression,0.0125,15,0.1284
+Linear Regression,0.0127,41,0.2005
+Linear Regression,0.014,173,0.437
+Linear Regression,0.015,70,0.193
+Linear Regression,0.017,80,0.3559
+Linear Regression,0.019,32,0.6941
+Linear Regression,0.024,42,0.1298
+Linear Regression,0.0245,32,0.1396
+Linear Regression,0.0254,6,0.0965
+Linear Regression,0.0286,54,0.3764
+Linear Regression,0.0318,40,0.1846
+Linear Regression,0.032,97,0.3012
+Linear Regression,0.038,28,0.0788
+Linear Regression,0.042,4,0.0987
+Linear Regression,0.0508,78,0.3316
+Linear Regression,0.1016,63,0.2562
+Linear Regression,0.125,19,0.3716
+Linear Regression,0.127,31,0.5004
+Random Forest,0.005,207,0.1233
+Random Forest,0.0094,14,0.2258
+Random Forest,0.0094,77,0.1663
+Random Forest,0.0095,30,0.1101
+Random Forest,0.01,95,0.2903
+Random Forest,0.0102,24,0.2133
+Random Forest,0.0103,15,0.1245
+Random Forest,0.0125,15,0.1903
+Random Forest,0.0127,41,0.0814
+Random Forest,0.014,173,0.2003
+Random Forest,0.015,70,0.4562
+Random Forest,0.017,80,0.3825
+Random Forest,0.019,32,0.7753
+Random Forest,0.024,42,0.2268
+Random Forest,0.0245,32,0.1023
+Random Forest,0.0254,6,0.0231
+Random Forest,0.0286,54,0.2662
+Random Forest,0.0318,40,0.1161
+Random Forest,0.032,97,0.3185
+Random Forest,0.038,28,0.1431
+Random Forest,0.042,4,0.0963
+Random Forest,0.0508,78,0.4157
+Random Forest,0.1016,63,0.3466
+Random Forest,0.125,19,0.1904
+Random Forest,0.127,31,0.3163
+Gradient Boosting,0.005,207,0.1819
+Gradient Boosting,0.0094,14,0.2339
+Gradient Boosting,0.0094,77,0.1475
+Gradient Boosting,0.0095,30,0.0803
+Gradient Boosting,0.01,95,0.4698
+Gradient Boosting,0.0102,24,0.269
+Gradient Boosting,0.0103,15,0.1812
+Gradient Boosting,0.0125,15,0.0874
+Gradient Boosting,0.0127,41,0.0586
+Gradient Boosting,0.014,173,0.3475
+Gradient Boosting,0.015,70,0.3258
+Gradient Boosting,0.017,80,0.4532
+Gradient Boosting,0.019,32,0.8255
+Gradient Boosting,0.024,42,0.2003
+Gradient Boosting,0.0245,32,0.1173
+Gradient Boosting,0.0254,6,0.0556
+Gradient Boosting,0.0286,54,0.3453
+Gradient Boosting,0.0318,40,0.1923
+Gradient Boosting,0.032,97,0.2937
+Gradient Boosting,0.038,28,0.073
+Gradient Boosting,0.042,4,0.2829
+Gradient Boosting,0.0508,78,0.443
+Gradient Boosting,0.1016,63,0.2772
+Gradient Boosting,0.125,19,0.2101
+Gradient Boosting,0.127,31,0.513
+"ANN (32-16, tanh)",0.005,207,0.1904
+"ANN (32-16, tanh)",0.0094,14,0.2696
+"ANN (32-16, tanh)",0.0094,77,0.2152
+"ANN (32-16, tanh)",0.0095,30,0.0361
+"ANN (32-16, tanh)",0.01,95,0.3556
+"ANN (32-16, tanh)",0.0102,24,0.2356
+"ANN (32-16, tanh)",0.0103,15,0.1077
+"ANN (32-16, tanh)",0.0125,15,0.0909
+"ANN (32-16, tanh)",0.0127,41,0.094
+"ANN (32-16, tanh)",0.014,173,0.2278
+"ANN (32-16, tanh)",0.015,70,0.3597
+"ANN (32-16, tanh)",0.017,80,0.4007
+"ANN (32-16, tanh)",0.019,32,0.8314
+"ANN (32-16, tanh)",0.024,42,0.266
+"ANN (32-16, tanh)",0.0245,32,0.1016
+"ANN (32-16, tanh)",0.0254,6,0.0688
+"ANN (32-16, tanh)",0.0286,54,0.2168
+"ANN (32-16, tanh)",0.0318,40,0.1433
+"ANN (32-16, tanh)",0.032,97,0.18
+"ANN (32-16, tanh)",0.038,28,0.0585
+"ANN (32-16, tanh)",0.042,4,0.1464
+"ANN (32-16, tanh)",0.0508,78,0.2213
+"ANN (32-16, tanh)",0.1016,63,0.1937
+"ANN (32-16, tanh)",0.125,19,0.1192
+"ANN (32-16, tanh)",0.127,31,0.198

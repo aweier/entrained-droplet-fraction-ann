@@ -1,4 +1,6 @@
 model,r2_mean,r2_std,rmse_mean,rmse_std
 Linear Regression,0.27,0.08,0.27,0.01
 TabNet,0.752,0.026,0.144,0.008
+Random Forest,0.94,0.01,0.07,0.0
+Gradient Boosting,0.92,0.0,0.08,0.0
 "ANN (32-16, tanh)",0.896,0.011,0.093,0.006
