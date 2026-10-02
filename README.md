@@ -108,10 +108,11 @@ Notes:
 - Cross-diameter generalization (e.g. leave-one-diameter-out) has not been tested.
 - Next steps: dimensionless-number feature engineering, uncertainty quantification, other flow regimes (slug/churn), benchmarking against classical entrainment correlations, and hybrid physics–ML models.
 
-## Reference
+## References
 
-Aliyu, A. M., et al. (2017). Entrained droplet fraction in vertical gas–liquid flow: experimental data and ANN modeling.
-
+- Aliyu, A. M., Choudhury, R., Sohani, B., Atanbori, J., Ribeiro, J. X. F., Ahmed, S. K. B., & Mishra, R. (2023). An artificial neural network model for the prediction of entrained droplet fraction in annular gas-liquid two-phase flow in vertical pipes. *International Journal of Multiphase Flow*, 164, 104452. https://doi.org/10.1016/j.ijmultiphaseflow.2023.104452 (open access, CC BY 4.0)
+- Aliyu, A. M., et al. (2017). Prediction of entrained droplet fraction in co-current annular gas–liquid flow in vertical pipes. *Experimental Thermal and Fluid Science*, 85, 287–304. https://doi.org/10.1016/j.expthermflusci.2017.03.012
 ## License
 
 MIT — see [LICENSE](LICENSE). The dataset remains the property of its original authors.
+
