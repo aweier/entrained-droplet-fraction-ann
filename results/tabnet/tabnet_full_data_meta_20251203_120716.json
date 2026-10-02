@@ -1,0 +1,39 @@
+{
+  "feature_cols": [
+    "D",
+    "Usg",
+    "UsL",
+    "rhol",
+    "rhog",
+    "st",
+    "MuL",
+    "Mug"
+  ],
+  "use_logit_target": true,
+  "tabnet_params": {
+    "n_d": 32,
+    "n_a": 32,
+    "n_steps": 5,
+    "gamma": 1.5,
+    "n_independent": 2,
+    "n_shared": 2,
+    "lambda_sparse": 0.0003,
+    "optimizer_fn": "<class 'torch.optim.adamw.AdamW'>",
+    "optimizer_params": {
+      "lr": 0.0003,
+      "weight_decay": 0.0001
+    },
+    "scheduler_fn": "<class 'torch.optim.lr_scheduler.ReduceLROnPlateau'>",
+    "scheduler_params": {
+      "mode": "min",
+      "factor": 0.85,
+      "patience": 30,
+      "min_lr": 1e-05
+    },
+    "mask_type": "sparsemax",
+    "verbose": 0,
+    "device_name": "cuda",
+    "seed": 42
+  },
+  "timestamp": "20251203_120716"
+}

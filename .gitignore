@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.DS_Store
+
+# Dataset is third-party (Aliyu et al., 2017); see README for where to place it
+data/*.csv

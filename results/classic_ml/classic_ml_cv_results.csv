@@ -1,0 +1,13 @@
+Method,Feature_Set,RMSE_mean,RMSE_std,R2_mean,R2_std
+Random Forest,Raw,0.07,0.0,0.94,0.01
+Gradient Boosting,Raw,0.08,0.0,0.92,0.0
+Decision Tree d=5,Raw,0.17,0.01,0.67,0.02
+SVM (poly deg=3),Raw,0.18,0.02,0.59,0.08
+Ridge (α=1.0),Raw,0.25,0.01,0.27,0.08
+Linear Regression,Raw,0.27,0.01,0.27,0.08
+Gradient Boosting,Dimensionless,0.14,0.01,0.76,0.02
+Random Forest,Dimensionless,0.14,0.02,0.75,0.06
+Decision Tree d=5,Dimensionless,0.2,0.02,0.53,0.07
+Ridge (α=1.0),Dimensionless,0.26,0.01,0.19,0.07
+Linear Regression,Dimensionless,0.26,0.01,0.19,0.07
+SVM (poly deg=3),Dimensionless,0.48,0.36,-2.76,5.6
